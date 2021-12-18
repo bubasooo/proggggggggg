@@ -1,0 +1,15 @@
+include("1.jl")
+include("11.jl")
+include("14.jl")
+include("16.jl")
+function updowntwicestep1111(r::Robot,side1::HorizonSide)
+    angleofsquare1111(r)
+    putmarker!(r)
+    putmarkholeper(r,side1)
+    while !isborder(r,Nord)
+        disexit(r,Nord)
+        putmarkholeper(r,inverse(side1))
+        backingper(r, side1)
+        disexit(r,inverse(side1))
+    end
+end
